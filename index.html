@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="/jquery ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="/jquery ui/external/jquery/jquery.js"></script>
+    <script src="/jquery ui/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+    </script>
+</head>
+
+<body class="parallax" style="background-color: #000;">
+    <ul class="nav justify-content-center" style="background-color: rgba(0, 0, 0, 0.7)">
+        <li class="nav-item">
+            <a class="nav-link text-light" href="#">TNT X BOOG</a>
+        </li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <!-- <div class="jumbotron jumbotron-fluid p-0">
+                <div class="container-fluid p-0">
+                    <img src="/images/mainVisual.jpg" alt="" style="width:100%">
+                </div>
+            </div> -->
+            <div class="col-12 d-flex justify-content-center mt-5">
+                <div class="p-2" style="background-color: rgba(0, 0, 0, 0.6)">
+                    <p class="h5 text-light">
+                        請將tnt 拖至 BOOG
+                    </p>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-between">
+                <div id="draggable" class="ui-widget-content"
+                    style="width: 50px;height: 50px; border: 1px solid black;">
+                    <img src="/images/tnt.jpeg" alt="" style="width:100%;">
+                </div>
+                <div class="text-right" id="put">
+                    <div class="border-dark" style="max-width: 50px;max-height: 50px; border: 1px solid black;">
+                        <img src="/images/bgn.jpeg" alt="" style="width: 100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dialog" title="恭喜中獎">
+        <p>恭喜獲得折扣碼：boogtnt8006</p>
+    </div>
+</body>
+
+<style>
+
+</style>
+<script type="text/javascript">
+    $(function () {
+        $("#draggable").draggable()
+        $("#put").droppable({
+            drop: function (event, ui) {
+                $(this).addClass("ui-state-highlight").find("p").html("Dropped!");
+                $("#dialog").dialog("open");
+            }
+        })
+        $("#dialog").dialog({
+            autoOpen: false,
+            show: {
+                effect: "blind",
+                duration: 1000
+            },
+            hide: {
+                effect: "explode",
+                duration: 1000
+            }
+        });
+
+        function openModal() {
+            $("#exampleModal").modal("show")
+        }
+    })
+</script>
+
+</html>
