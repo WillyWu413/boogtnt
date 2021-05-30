@@ -24,14 +24,14 @@
 } */
 
 .parallax {
-  background: url("/images/1xLifeTree.jpeg") no-repeat;
+  background: url("images/1xLifeTree.jpeg") no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
 .mainPic{
-  background: url("/images/1xLifeTree.jpeg") no-repeat;
+  background: url("images/1xLifeTree.jpeg") no-repeat;
   background-size: cover;
   height: 700px
 }
